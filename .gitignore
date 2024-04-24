@@ -1,0 +1,8 @@
+/tmp/
+/dist/
+/node_modules/
+/views/**/*.go
+bin
+*.db
+tailwindcss
+*.pdf
