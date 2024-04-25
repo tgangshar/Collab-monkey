@@ -6,3 +6,4 @@ bin
 *.db
 tailwindcss
 *.pdf
+.DS_Store
