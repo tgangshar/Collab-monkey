@@ -40,3 +40,59 @@ func TestNextToken(t *testing.T) {
 		}
 	}
 }
+
+'''
+func TestNextToken(t *testing.T) {
+	input := 'let five = 5;
+	let ten = 10;
+	
+	let add = fn(x,y) {
+		x+y;
+	};
+	
+	let result = add(five, ten);'
+
+	test := []struct {
+		expectedType token.TokenTypeexpectedLiteral string
+	}{
+		{token.LET, "let"},
+		{token.INDENT, "five"},
+		{token.ASSIGN, "="},
+		{token.INT, "5"},
+		{token.SEMICOLON, ";"},
+		{token.LET, "let"},
+		{token.INDENT, "ten"},
+		{token.ASSIGN, "="},
+		{token.INT, "10"},
+		{token.SEMICOLON, ";"},
+		{token.LET, "let"},
+		{token.INDENT, "add"},
+		{token.ASSIGN, "="},
+		{token.FUNCTION, "fn"},
+		{token.LPAREN, "("},
+		{token.INDENT, "x"},
+		{token.COMMA, ","},
+		{token.INDENT, "y"}
+		{token.RPAREN, ")"},
+		{token.LBRACE, "{"},
+		{token.INDENT, "x"},
+		{token.PLUS, "+"},
+		{token.INDENT, "y"},
+		{token.SEMICOLON, ";"},
+		{token.RBRACE, "}"},
+		{token.SEMICOLON, ";"}
+		{token.LET, "let"},
+		{token.INDENT, "result"},
+		{token.ASSIGN, "="},
+		{token.INDENT, "add"},
+		{token.LPAREN, "("},
+		{token.INDENT, "five"},
+		{token.COMMA, ","}
+		{token.INDENT, "ten"}
+		{token.RPAREN, ")"},
+		{token.SEMICOLON, ";"},
+		{token.EOF, ""},
+	}
+///[...]
+}
+'''
