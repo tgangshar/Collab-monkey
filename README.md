@@ -1,4 +1,5 @@
 # Go-Monkey Collaboration
+<<<<<<< HEAD
 	Creating monkey Interpreter with contributors based on [go book](https://interpreterbook.com/)
 
 - next step: creating strategy map with timeline
@@ -37,3 +38,8 @@
 4. Array
 5. Hashes
 6. Finale
+=======
+ Creating monkey Interpreter with collaborator based on [Go book](https://interpreterbook.com/)
+
+- next step: creating strategy map with timeline
+>>>>>>> 5a5494671758a98f29bbd7769e76b27bd9deae96
