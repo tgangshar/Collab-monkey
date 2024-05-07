@@ -4,11 +4,11 @@ import "monkey/token"
 
 type Lexer struct {
 	input        string
-	position     int  // current position in input (the input being a string, thus the current postion being that of the current)
-	readPosition int  // the position of the char that succeds the current char
+	position     int  // current position in input (the input being a string, thus the current postion being that of the char being read)
+	readPosition int  // current reading position in input (after current char)
 	ch           byte // current char under examination
 }
-
+ 
 func New(input string) *Lexer {
 	l := &Lexer{input: input}
 	l.readChar()
@@ -20,7 +20,7 @@ func (l *Lexer) NextToken() token.Token {
 
 	l.skipWhitespace()
 
-	switch l.ch {
+	switch l.ch { 
 	case '=':
 		if l.peekChar() == '=' {
 			ch := l.ch
