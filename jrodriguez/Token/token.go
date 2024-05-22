@@ -1,10 +1,23 @@
+// first step in creating our lexer is defining the the tokens our lexer is going to output 
+
 package token
 
+// defining the token type as a string allows us to use many different values as TokenTypes, 
 type TokenType string
 
+// Token data structure 
+type Token struct {
+
+	Type TokenType
+
+	// holds the literal value of the token
+	Literal string 
+}
+
+// there is a limited numbe rof token types in monkey so we can define the possible TokenTypes as constants
 const (
-	ILLEGAL = "ILLEGAL"
-	EOF     = "EOF"
+	ILLEGAL = "ILLEGAL" // denotes a token / character we dont know of 
+	EOF     = "EOF" // tells our parser that it can stop indicating that the end of the file has been reached 
 
 	// Identifiers + literals
 	IDENT = "IDENT" // add, foobar, x, y, ...
